@@ -1,0 +1,9 @@
+name: dinov2-fire-hazard
+channels:
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -r requirements.txt
+      - -e .

@@ -1,0 +1,22 @@
+{
+  "verified_at": "2026-06-20",
+  "seed": 42,
+  "binary": {
+    "samples": 25,
+    "class_distribution": {"No_Hazard": 8, "Hazard": 17},
+    "accuracy": 0.96,
+    "macro_f1": 0.9554367201426025,
+    "confusion_matrix": [[8, 0], [1, 16]]
+  },
+  "multiclass": {
+    "samples": 19,
+    "class_distribution": {"Confused_Wiring": 9, "Fire_Lane_Blocked": 10},
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "confusion_matrix": [[9, 0], [0, 10]]
+  },
+  "commands": [
+    "python scripts/evaluate.py --config configs/binary.yaml",
+    "python scripts/evaluate.py --config configs/multiclass.yaml"
+  ]
+}

@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Editors and OS files
+.agents/
+.codex/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Private training data, pretrained weights, and generated experiments
+data/train/
+data/test/
+data/private_manifests/
+weights/
+outputs/
+results/reproduced/

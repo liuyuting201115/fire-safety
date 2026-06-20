@@ -1,0 +1,28 @@
+task: binary
+seed: 42
+device: auto
+batch_size: 16
+num_workers: 0
+
+model:
+  architecture: vit_small_patch14_dinov2
+  image_size: 224
+  backbone_image_size: 518
+  use_se_head: true
+
+data:
+  test_dir: data/test/binary
+  class_names:
+    - No_Hazard
+    - Hazard
+  normalize_mean: [0.5, 0.5, 0.5]
+  normalize_std: [0.5, 0.5, 0.5]
+
+checkpoint: checkpoints/binary_best.pth
+output_dir: results/reproduced/binary
+threshold: 0.5
+
+expected:
+  accuracy: 0.96
+  macro_f1: 0.9554367201426025
+  tolerance: 1.0e-6

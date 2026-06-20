@@ -1,0 +1,27 @@
+task: multiclass
+seed: 42
+device: auto
+batch_size: 8
+num_workers: 0
+
+model:
+  architecture: vit_small_patch14_dinov2
+  image_size: 518
+  backbone_image_size: 518
+  use_se_head: true
+
+data:
+  test_dir: data/test/multiclass
+  class_names:
+    - Confused_Wiring
+    - Fire_Lane_Blocked
+  normalize_mean: null
+  normalize_std: null
+
+checkpoint: checkpoints/multiclass_best.pth
+output_dir: results/reproduced/multiclass
+
+expected:
+  accuracy: 1.0
+  macro_f1: 1.0
+  tolerance: 1.0e-6
